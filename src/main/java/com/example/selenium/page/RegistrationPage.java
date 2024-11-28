@@ -1,5 +1,6 @@
 package com.example.selenium.page;
 
+import com.twocaptcha.TwoCaptcha;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,25 @@ public class RegistrationPage {
 
     @FindBy(xpath = "//*[@id=\"lastName\"]")
     private  WebElement fieldSurnameWebElement;
+
+    @FindBy(xpath = "//*[@id=\"firstName\"]")
+    private WebElement fieldNameWebElement;
+
+    @FindBy(xpath = "//*[@id=\"phone\"]")
+    private WebElement fieldMobilePhoneWebElement;
+
+
+    @FindBy(xpath = "//*[@id=\"email\"]")
+    private WebElement emailFieldWebElement;
+
+
+    @FindBy(xpath = "/html/body/esia-root/div/esia-registration/div/div/div[1]/form/button")
+    private WebElement continueButton;
+
+
+//    @FindBy(xpath = "/html/body/esia-root/div/esia-registration/div/div/div[1]/esia-captcha/div/esia-ui-captcha/div/div/img")
+    private WebElement captchaInput;
+
 
 
     private WebDriver driver;
@@ -40,5 +60,26 @@ public class RegistrationPage {
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(fieldSurnameWebElement));
         fieldSurnameWebElement.sendKeys("Иванов");
     }
-}
+
+    public void setFieldNameWebElement() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(fieldNameWebElement));
+        fieldNameWebElement.sendKeys("Олег");
+    }
+    public void setFieldMobilePhoneWebElement() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(fieldMobilePhoneWebElement));
+        fieldMobilePhoneWebElement.sendKeys("8888888888888");
+    }
+    public void setEmailFieldWebElement() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(emailFieldWebElement));
+        emailFieldWebElement.sendKeys("ivanov@yandex.ru");
+    }
+    public void setContinueButton() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(continueButton));
+        continueButton.click();
+    }
+
+
+    }
+
+
 

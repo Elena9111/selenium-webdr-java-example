@@ -12,6 +12,11 @@ public class RegistrationPageTest extends BaseTest {
         registrationPage.setButtonRegisterWebElement();
         registrationPage.setAnotherWayToRegisterButtonWebElement();
         registrationPage.setFieldSurnameWebElement();
+        registrationPage.setFieldNameWebElement();
+        registrationPage.setFieldMobilePhoneWebElement();
+        registrationPage.setEmailFieldWebElement();
+        registrationPage.setContinueButton();
+
         try {
             Thread.sleep(10_000);
         } catch (InterruptedException e) {
