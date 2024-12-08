@@ -3,6 +3,7 @@ package com.example.selenium.utils;
 import com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter;
 import com.example.selenium.driver.DriverFactory;
 import com.example.selenium.page.AuthorizationPage;
+import com.example.selenium.page.MailPage;
 import com.example.selenium.page.RegistrationPage;
 import com.example.selenium.report.ReportListener;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ public abstract class BaseTest {
     protected static WebDriver driver;
     protected AuthorizationPage authorizationPage;
     protected RegistrationPage registrationPage;
+    protected MailPage mailPage;
 
     public static WebDriver getDriver() {
         return driver;
@@ -32,6 +34,7 @@ public abstract class BaseTest {
 
 
         registrationPage= new RegistrationPage(driver);
+        mailPage= new MailPage(driver);
 
     }
 
